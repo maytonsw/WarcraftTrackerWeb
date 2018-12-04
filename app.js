@@ -5,10 +5,27 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 
-var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('localhost:27017/nodetest1')
+var mongodb = require('mongodb');
+var MongoClient = mongodb.MongoClient;
+//var monk = require('monk');
+//var url = "mongodb://seanmayton:h0stmy4pp!@ds225624.mlab.com:25624/nodetestdb";
+var db = require('monk')(process.env.MONGOLAB_URI);
 
+//var url = process.env.MONGOLAB_URI;
+/*
+MongoClient.connect(url, function (err, db) {
+  if (err) {
+    console.log('Unable to connect to the mongoDB server. Error:', err);
+  } else {
+    console.log('Connection established to', url);
+
+    // do some work here with the database.
+
+    //Close connection
+    db.close();
+  }
+});
+*/
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
