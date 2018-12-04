@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  h1 Warcraft Tracker
+  #container.col
+    p Discover your character's ranking!
+
+  input(type='datalist' name='agreement' checked)
+
+
+<!--
+.container
+  .row
+    .col-md-3
+    .col-md-6
+      h1 Character Tracker
+      p Discover Your Average Ranking!
+    .col-md-3
+  form.col-md-6.col-md-offset-3.text-center
+    .form-group
+      label(for='userRegion') Server Region
+      select#userRegion.form-control(type='text')
+        option US
+        option EU
+        option KR
+        option TW
+        option CN
+    .form-group
+      label(for='userServer') Server Name
+      input#userServer.form-control(type='text')
+    .form-group
+      label(for='userCharacter') Character Name
+      input#userCharacter.form-control(type='text')
+    .form-group
+      label.radio-inline
+        input#logMetric(type='radio' name='optMetric' value='dps' checked='')
+        | DPS
+      label.radio-inline
+        input#logMetric(type='radio' name='optMetric' value='hps')
+        | HPS
+    #keyForm.form-group
+      label(for='userKey')
+        | WarcraftLogs.com Public Key 
+        a(href='https://www.warcraftlogs.com/profile') Click here if access to private logs are necessary.
+      input#userKey.form-control(value='879f290422d74824299a945f46eefca3') -->
