@@ -27,7 +27,7 @@ router.get('/newuser', function(req, res) {
   res.render('newuser', { title: "Add New User" });
 });
 
-/* GET New User page. */
+/* GET Character Tracker page. */
 router.get('/charTracker', function(req, res) {
   res.render('charTracker', { title: "Warcraft Tracker" });
 });
