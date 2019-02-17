@@ -1,14 +1,21 @@
-extends layout
+// extends layout
 
-block content
-  h1 Warcraft Tracker
-  #container.col
-    p Discover your character's ranking!
+  block content
+   h1 Warcraft Tracker
+   #container.col
+     p Discover your character's ranking!
 
-  input(type='datalist' name='agreement' checked)
-
-
-<!--
+   input(type='datalist' name='agreement' checked)
+//
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  title Rankings Viewer
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  link(rel='stylesheet' type='text/css' href='tracker.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
 .container
   .row
     .col-md-3
@@ -42,4 +49,20 @@ block content
       label(for='userKey')
         | WarcraftLogs.com Public Key 
         a(href='https://www.warcraftlogs.com/profile') Click here if access to private logs are necessary.
-      input#userKey.form-control(value='879f290422d74824299a945f46eefca3') -->
+      input#userKey.form-control(value='879f290422d74824299a945f46eefca3')
+.container
+  .row
+    .col-md-6.col-md-offset-3.text-center
+      a#keyButton.btn.btn-info(href='#' role='button' onclick='toggleKeyField()') Show Key (Optional)
+      a.btn.btn-primary.btn-md(href='#' role='button' onclick='buildRankings()') Fetch Rankings
+.container
+  h2#avgRanking
+.container
+  .row
+    .col-md-6.col-md-offset-3.text-center
+      img(src='trackingorc.jpg' alt='Tracking' height='400' width='457')
+//
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/bootstrap-table.min.js"></script>
+script(type='text/javascript' src='js/rankings.js')
